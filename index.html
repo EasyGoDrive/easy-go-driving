@@ -1,11 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Go Driving School - Learn to Drive with Confidence</title>
-    <meta name="description" content="Professional driving lessons in Australia. Learn to drive with experienced instructors. Book your driving lesson today!">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>EasyGo Driving School - Coming Soon</title>
     <style>
         * {
             margin: 0;
@@ -13,1058 +12,450 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
+```
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
 
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
+    .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 20px;
+    }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
+    .floating-cars {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        overflow: hidden;
+    }
 
+    .car {
+        position: absolute;
+        font-size: 30px;
+        animation: float 20s infinite linear;
+        opacity: 0.1;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateX(-100px) translateY(0px);
+        }
+        100% {
+            transform: translateX(calc(100vw + 100px)) translateY(-50px);
+        }
+    }
+
+    .main-content {
+        text-align: center;
+        z-index: 10;
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+
+    .tagline {
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+        animation: fadeInUp 1s ease-out 0.5s both;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .coming-soon-text {
+        color: white;
+        font-size: 3rem;
+        margin-bottom: 40px;
+        font-weight: 300;
+        animation: fadeInUp 1s ease-out 1s both;
+    }
+
+    .description {
+        color: white;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        opacity: 0.9;
+        animation: fadeInUp 1s ease-out 1.5s both;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+        animation: fadeInUp 1s ease-out 2s both;
+    }
+
+    .feature-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .feature-title {
+        color: white;
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .feature-description {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.5;
+    }
+
+    .notify-form {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 30px;
+        animation: fadeInUp 1s ease-out 2.5s both;
+    }
+
+    .notify-form h3 {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+
+    .form-group {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .form-group input {
+        flex: 1;
+        min-width: 200px;
+        padding: 15px;
+        border: none;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+        outline: none;
+        transition: transform 0.3s ease;
+    }
+
+    .form-group input:focus {
+        transform: scale(1.05);
+    }
+
+    .notify-btn {
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+    }
+
+    .notify-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        animation: fadeInUp 1s ease-out 3s both;
+    }
+
+    .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .social-link:hover {
+        transform: scale(1.2);
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        animation: particle-float 15s infinite linear;
+    }
+
+    @keyframes particle-float {
+        0% {
+            transform: translateY(100vh) rotate(0deg);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-100px) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    .success-message {
+        background: rgba(76, 175, 80, 0.2);
+        border: 1px solid rgba(76, 175, 80, 0.5);
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 15px;
+        display: none;
+    }
+
+    @media (max-width: 768px) {
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-item a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-item a:hover {
-            color: #2563eb;
-        }
-
-        .nav-item a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: #2563eb;
-            transition: width 0.3s ease;
-        }
-
-        .nav-item a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,800 1000,1000"/></svg>');
-            background-size: cover;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.3s forwards;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.6s forwards;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary {
-            background: #f59e0b;
-            color: white;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.6);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: #667eea;
-            transform: translateY(-2px);
-        }
-
-        /* Sections */
-        .section {
-            padding: 5rem 0;
-            position: relative;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1f2937;
-            position: relative;
         }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #2563eb, #f59e0b);
-            border-radius: 2px;
-        }
-
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #2563eb, #f59e0b);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: #2563eb;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #1f2937;
-        }
-
-        /* About */
-        .about {
-            background: linear-gradient(45deg, #f8fafc, #e2e8f0);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
+        
+        .coming-soon-text {
             font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #1f2937;
         }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: #4b5563;
-            font-size: 1.1rem;
+        
+        .tagline {
+            font-size: 1.2rem;
         }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 1rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #2563eb;
-        }
-
-        /* Pricing */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .pricing-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            text-align: center;
-        }
-
-        .pricing-card.popular {
-            transform: scale(1.05);
-            border: 3px solid #f59e0b;
-        }
-
-        .pricing-card.popular::before {
-            content: 'Most Popular';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #f59e0b;
-            color: white;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .pricing-card.popular:hover {
-            transform: scale(1.05) translateY(-5px);
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #2563eb;
-            margin: 1rem 0;
-        }
-
-        .features {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .features li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .features li:last-child {
-            border-bottom: none;
-        }
-
-        .features li i {
-            color: #10b981;
-            margin-right: 0.5rem;
-        }
-
-        /* Contact */
-        .contact {
-            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-            color: white;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item i {
-            font-size: 1.5rem;
-            color: #f59e0b;
-            margin-right: 1rem;
-        }
-
-        .contact-form {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: none;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.9);
-            color: #333;
+        
+        .description {
             font-size: 1rem;
         }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
+        
+        .form-group {
+            flex-direction: column;
         }
-
-        /* Footer */
-        .footer {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
+        
+        .form-group input {
+            min-width: 100%;
         }
+    }
+</style>
+```
 
-        .social-links {
-            margin: 1rem 0;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #f59e0b;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-card.popular {
-                transform: none;
-            }
-
-            .pricing-card.popular:hover {
-                transform: translateY(-5px);
-            }
-        }
-
-        /* Loading Animation */
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #667eea;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top: 3px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Hide scrollbar but keep functionality */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #2563eb;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #1d4ed8;
-        }
-    </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading" id="loading">
-        <div class="spinner"></div>
+    <div class="particles" id="particles"></div>
+
+```
+<div class="floating-cars">
+    <div class="car" style="top: 20%; animation-delay: 0s;">🚗</div>
+    <div class="car" style="top: 40%; animation-delay: 5s;">🚙</div>
+    <div class="car" style="top: 60%; animation-delay: 10s;">🚕</div>
+    <div class="car" style="top: 80%; animation-delay: 15s;">🚗</div>
+</div>
+
+<div class="container">
+    <div class="main-content">
+        <h1 class="logo">EasyGo</h1>
+        <p class="tagline">Your Journey to Safe Driving Starts Here</p>
+        
+        <h2 class="coming-soon-text">Coming Soon</h2>
+        
+        <p class="description">
+            Get ready for the most comprehensive and modern driving school experience. 
+            We're preparing something amazing that will revolutionize how you learn to drive!
+        </p>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Expert Instructors</h3>
+                <p class="feature-description">Learn from certified professionals with years of experience</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🚗</div>
+                <h3 class="feature-title">Modern Fleet</h3>
+                <p class="feature-description">Practice with the latest vehicles equipped with safety features</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Digital Learning</h3>
+                <p class="feature-description">Interactive online modules and progress tracking</p>
+            </div>
+        </div>
+
+        <div class="notify-form">
+            <h3>Get Notified When We Launch!</h3>
+            <form id="notifyForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+                <button type="submit" class="notify-btn">Notify Me</button>
+                <div class="success-message" id="successMessage">
+                    Thank you! We'll notify you as soon as we launch.
+                </div>
+            </form>
+        </div>
+
+        <div class="social-links">
+            <a href="#" class="social-link">📧</a>
+            <a href="#" class="social-link">📱</a>
+            <a href="#" class="social-link">🌐</a>
+        </div>
     </div>
+</div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">Easy Go Driving School</a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home">Home</a></li>
-                <li class="nav-item"><a href="#services">Services</a></li>
-                <li class="nav-item"><a href="#about">About</a></li>
-                <li class="nav-item"><a href="#pricing">Pricing</a></li>
-                <li class="nav-item"><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Learn to Drive with Confidence</h1>
-            <p>Professional driving lessons with experienced instructors. Start your journey to becoming a safe and confident driver today!</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Book a Lesson</a>
-                <a href="#services" class="btn btn-secondary">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="section" id="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h3>Manual Lessons</h3>
-                    <p>Learn to drive with manual transmission. Master clutch control, gear changes, and become a versatile driver capable of handling any vehicle.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <h3>Automatic Lessons</h3>
-                    <p>Focus on road skills and traffic awareness with automatic transmission lessons. Perfect for those who want to concentrate on driving fundamentals.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-clipboard-check"></i>
-                    </div>
-                    <h3>Test Preparation</h3>
-                    <p>Comprehensive preparation for your driving test. Mock tests, route familiarization, and confidence building to ensure you pass first time.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <h3>Refresher Courses</h3>
-                    <p>Haven't driven in a while? Our refresher courses help build your confidence back up and update you on current road rules.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Defensive Driving</h3>
-                    <p>Advanced techniques to keep you safe on the road. Learn hazard perception, emergency responses, and accident prevention strategies.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-road"></i>
-                    </div>
-                    <h3>Highway Driving</h3>
-                    <p>Master highway and freeway driving with confidence. Learn merging, lane changes, and high-speed driving techniques safely.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <h2 class="section-title">Why Choose Easy Go Driving School?</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Your Success is Our Priority</h3>
-                    <p>With over 15 years of experience in driver education, we've helped thousands of students become safe, confident drivers. Our patient, professional instructors use proven teaching methods tailored to your learning style.</p>
-                    <p>We provide modern, well-maintained vehicles equipped with dual controls for your safety and peace of mind. All our instructors are fully licensed, police-checked, and passionate about road safety.</p>
-                    <a href="#contact" class="btn btn-primary">Start Learning Today</a>
-                </div>
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number">5000+</div>
-                        <div>Students Taught</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">95%</div>
-                        <div>Pass Rate</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">15+</div>
-                        <div>Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">4.9★</div>
-                        <div>Average Rating</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="section" id="pricing">
-        <div class="container">
-            <h2 class="section-title">Lesson Packages</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Single Lesson</h3>
-                    <div class="price">$65</div>
-                    <p>Per 1 Hour Lesson</p>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> 1 Hour Driving Lesson</li>
-                        <li><i class="fas fa-check"></i> Experienced Instructor</li>
-                        <li><i class="fas fa-check"></i> Dual Control Vehicle</li>
-                        <li><i class="fas fa-check"></i> Flexible Scheduling</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Book Now</a>
-                </div>
-                <div class="pricing-card popular">
-                    <h3>5 Lesson Package</h3>
-                    <div class="price">$300</div>
-                    <p>Save $25 - Best Value!</p>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> 5 Hours of Lessons</li>
-                        <li><i class="fas fa-check"></i> Progress Tracking</li>
-                        <li><i class="fas fa-check"></i> Test Route Practice</li>
-                        <li><i class="fas fa-check"></i> Pre-Test Assessment</li>
-                        <li><i class="fas fa-check"></i> 3 Months Validity</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Book Now</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>10 Lesson Package</h3>
-                    <div class="price">$580</div>
-                    <p>Save $70 - Complete Course</p>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> 10 Hours of Lessons</li>
-                        <li><i class="fas fa-check"></i> Comprehensive Training</li>
-                        <li><i class="fas fa-check"></i> Multiple Test Routes</li>
-                        <li><i class="fas fa-check"></i> Mock Driving Test</li>
-                        <li><i class="fas fa-check"></i> 6 Months Validity</li>
-                        <li><i class="fas fa-check"></i> Test Day Support</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Book Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <strong>Phone:</strong><br>
-                            <a href="tel:+61412345678" style="color: white; text-decoration: none;">+61 412 345 678</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <strong>Email:</strong><br>
-                            <a href="mailto:info@easygodrivingschool.com.au" style="color: white; text-decoration: none;">info@easygodrivingschool.com.au</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <strong>Service Areas:</strong><br>
-                            Traralgon 3844 Victoria
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <strong>Operating Hours:</strong><br>
-                            Mon-Fri: 8AM-6PM<br>
-                            Sat-Sun: 9AM-4PM
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Type</label>
-                            <select id="service" name="service">
-                                <option value="">Select a service...</option>
-                                <option value="manual">Manual Lessons</option>
-                                <option value="automatic">Automatic Lessons</option>
-                                <option value="test-prep">Test Preparation</option>
-                                <option value="refresher">Refresher Course</option>
-                                <option value="defensive">Defensive Driving</option>
-                                <option value="highway">Highway Driving</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your driving experience and what you'd like to learn..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-google"></i></a>
-            </div>
-            <p>&copy; 2025 Easy Go Driving School. All rights reserved. | ABN: 50653118715 </p>
-            <p>Fully Licensed & Insured | Dual Control Vehicles | Professional Instructors</p>
-        </div>
-    </footer>
-
-    <script>
-        // Loading screen
-        window.addEventListener('load', function() {
-            const loading = document.getElementById('loading');
-            loading.style.opacity = '0';
-            setTimeout(() => {
-                loading.style.display = 'none';
-            }, 500);
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navMenu = document.querySelector('.nav-menu');
-
-        mobileMenu.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            this.classList.toggle('active');
-        });
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Simple validation
-            if (!data.name || !data.phone || !data.email) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Simulate form submission
-            const button = this.querySelector('button[type="submit"]');
-            const originalText = button.textContent;
-            button.textContent = 'Sending...';
-            button.disabled = true;
-            
-            setTimeout(() => {
-                alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-                this.reset();
-                button.textContent = originalText;
-                button.disabled = false;
-            }, 2000);
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.service-card, .pricing-card, .stat-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-
-        // Counter animation for stats
-        function animateCounter(element, target, duration = 2000) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            
-            function updateCounter() {
-                start += increment;
-                if (start < target) {
-                    element.textContent = Math.floor(start).toLocaleString();
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    element.textContent = target.toLocaleString() + (element.textContent.includes('%') ? '%' : element.textContent.includes('★') ? '★' : '+');
-                }
-            }
-            updateCounter();
+<script>
+    // Create floating particles
+    function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
         }
+    }
 
-        // Animate counters when they come into view
-        const statObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const number = entry.target.querySelector('.stat-number');
-                    const text = number.textContent;
-                    let targetValue = parseInt(text.replace(/[^\d]/g, ''));
-                    
-                    if (text.includes('%')) {
-                        animateCounter(number, targetValue);
-                    } else if (text.includes('★')) {
-                        number.textContent = '4.9★';
-                    } else {
-                        animateCounter(number, targetValue);
-                    }
-                    
-                    statObserver.unobserve(entry.target);
-                }
-            });
-        });
-
-        document.querySelectorAll('.stat-item').forEach(item => {
-            statObserver.observe(item);
-        });
-
-        // Add mobile menu styles
-        const style = document.createElement('style');
-        style.textContent = `
-            @media (max-width: 768px) {
-                .nav-menu {
-                    position: fixed;
-                    left: -100%;
-                    top: 70px;
-                    flex-direction: column;
-                    background-color: white;
-                    width: 100%;
-                    text-align: center;
-                    transition: 0.3s;
-                    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-                    z-index: 999;
-                    padding: 2rem 0;
-                }
-                
-                .nav-menu.active {
-                    left: 0;
-                }
-                
-                .nav-menu li {
-                    margin: 1rem 0;
-                }
-                
-                .mobile-menu.active span:nth-child(1) {
-                    transform: rotate(-45deg) translate(-5px, 6px);
-                }
-                
-                .mobile-menu.active span:nth-child(2) {
-                    opacity: 0;
-                }
-                
-                .mobile-menu.active span:nth-child(3) {
-                    transform: rotate(45deg) translate(-5px, -6px);
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Add floating action button for quick booking
-        const fab = document.createElement('div');
-        fab.innerHTML = `
-            <a href="#contact" style="
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                width: 60px;
-                height: 60px;
-                background: linear-gradient(45deg, #f59e0b, #d97706);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                text-decoration: none;
-                font-size: 1.5rem;
-                box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
-                transition: all 0.3s ease;
-                z-index: 1000;
-                animation: pulse 2s infinite;
-            " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                <i class="fas fa-phone"></i>
-            </a>
-        `;
-        document.body.appendChild(fab);
-
-        // Add pulse animation
-        const pulseStyle = document.createElement('style');
-        pulseStyle.textContent = `
-            @keyframes pulse {
-                0% {
-                    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
-                }
-                50% {
-                    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.8), 0 0 0 10px rgba(245, 158, 11, 0.1);
-                }
-                100% {
-                    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
-                }
-            }
-        `;
-        document.head.appendChild(pulseStyle);
-
-        // Add typing effect to hero
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.textContent = '';
+    // Handle form submission
+    document.getElementById('notifyForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        
+        if (name && email && phone) {
+            // Store notification data in memory
+            const notificationData = {
+                name: name,
+                email: email,
+                phone: phone,
+                timestamp: new Date().toISOString()
+            };
             
-            function type() {
-                if (i < text.length) {
-                    element.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 3 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 3000);
         }
+    });
 
-        // Initialize typing effect after page load
-        setTimeout(() => {
-            const heroTitle = document.querySelector('.hero h1');
-            const originalText = heroTitle.textContent;
-            typeWriter(heroTitle, originalText, 80);
-        }, 1000);
-    </script>
+    // Add dynamic background animation
+    function animateBackground() {
+        const body = document.body;
+        let hue = 0;
+        
+        setInterval(() => {
+            hue = (hue + 1) % 360;
+            body.style.background = `linear-gradient(135deg, hsl(${hue}, 70%, 65%) 0%, hsl(${hue + 50}, 70%, 65%) 100%)`;
+        }, 100);
+    }
+
+    // Initialize animations
+    createParticles();
+    animateBackground();
+
+    // Add scroll reveal animation
+    window.addEventListener('scroll', () => {
+        const elements = document.querySelectorAll('.feature-card, .notify-form');
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.style.transform = 'translateY(0)';
+                element.style.opacity = '1';
+            }
+        });
+    });
+</script>
+```
+
 </body>
 </html>
